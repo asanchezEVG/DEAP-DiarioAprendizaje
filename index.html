@@ -4,24 +4,30 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Diario de Aprendizaje</title>
-        <link rel="shortcut icon" href="img/logo.svg"" type="image/x-icon">
+        <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class="layout">
             <header>
-                <a href="index.html" class="logo"><img src="img/home.svg" alt="Inicio"></a>
+                <a href="index.html" class="logo">
+                    <img src="img/home.svg" alt="Inicio">
+                </a>
                 <a href="">DIARIO DE APRENDIZAJE</a>
                 <div></div>
-                <a href=""><img src="img/claro.svg" alt=""></a>
+                <a href="">
+                    <img src="img/claro.svg" alt="">
+                </a>
             </header>
             <aside>
                 <ul>
-                    <li><a href="#">T.1 - Control de versiones</a>
+                    <li><a href="#primero">T.1 - GIT</a>
                         <ul>
-                            <li><a href="#">1.1 </a></li>
-                            <li><a href="#">1.2</a></li>
-                            <li><a href="#">1.3</a></li>
+                            <li><a href="#segundo">1.1 - Control de versiones</a></li>
+                            <li><a href="#tercero">1.2 - Áreas de trabajo</a></li>
+                            <li><a href="#cuarto">1.3 - Estado de ficheros</a></li>
+                            <li><a href="#quinto">1.4 - Comandos</a></li>
+                            <li><a href="#sexto">1.5 - Trabajando con ramas</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Tema 2</a>
@@ -48,9 +54,254 @@
                 </ul>
             </aside>            
             <main class="container">
-                <h1>Una Introducción a GIT</h1>
+                <h1 id="primero">Tema 1 - GIT</h1>
+                <section>
+                    <article>
+                        <h2 id="segundo">Una Introducción a GIT</h2>
+                        <p>GIT es un servicio estándar de comunicación y gestión de información entre local y remoto, cuyo objetivo es poder llevar un control de distintas versiones presentes en un proyecto, permitiendo recuperarlas de manera específica.</p>
+                        <p>Podemos encontrarlo integrado en la mayoría de IDE's como pueden ser Visual Studio Code, WebStorm, PhpStorm, Docker, etc.</p>
+                    </article>
+                    <article>
+                        <h2 id="tercero">Áreas de trabajo</h2>
+                        <ul class="areas">
+                            <li><b>Directorio de trabajo</b>
+                                <ul>
+                                    <li>En él encontramos todos los archivos de nuestro proyecto.</li>
+                                </ul>
+                            </li>
+                            <li><b>Staging</b>
+                                <ul>
+                                    <li>Área de preparación, el archivo aún no está guardado definitivamente.</li>
+                                </ul>
+                            </li>
+                            <li><b>Repositorio local</b>
+                                <ul>
+                                    <li>Es el repositorio que encontramos localizado en nuestro ordenador.</li>
+                                </ul>
+                            </li>
+                            <li><b>Repositorio remoto</b>
+                                <ul>
+                                    <li>Repositorio centralizado, varios desarrolladores pueden trabajar sobre él.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h2 id="cuarto">Estado de ficheros</h2>
+                        <ul id="colores" class="estados">
+                            <li><b>Untracked</b>
+                                <ul>
+                                    <li>El fichero no está bajo el control de versiones. No está en el repositorio.</li>
+                                </ul>
+                            </li>
+                            <li><b>Unmodified</b>
+                                <ul>
+                                    <li>El fichero está en el repositorio pero no ha sido modificado desde su última versión confirmada.</li>
+                                </ul>
+                            </li>
+                            <li><b>Modified</b>
+                                <ul>
+                                    <li>Los datos/ficheros se han modificado, pero todavía no los has confirmado a tu base de datos.</li>
+                                </ul>
+                            </li>
+                            <li><b>Staged</b>
+                                <ul>
+                                    <li>Se ha marcado un archivo modificado en su versión actual para que vaya en tu próxima confirmación.</li>
+                                </ul>
+                            </li>
+                            <li><b>Commited</b>
+                                <ul>
+                                    <li>Los datos/ficheros están almacenados de manera segura en tu base de datos local.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </article>
+                </section>
+                <section>
+                    <h2 id="quinto">Comandos</h2>
+                    <article>
+                        <h3>Inicio de un repositorio local</h3>
+                        <p>Para iniciar el repositorio local, utilizamos el comando <b>git init</b>.</p>
+                        <div class="code">
+                            <p><span class="git">git</span> init <span class="comentario">/* Inicia el repositorio local */</span></p>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Renombrar la rama principal</h3>
+                        <p>La rama master local pasa a llamarse main, como la de por defecto de GITHub, mediante <b>git branch -m main</b>.</p>
+                        <div class="code">
+                            <p><span class="git">git</span> branch -m main <span class="comentario">/* Cambia el nombre de la rama principal */</span></p>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Añadir archivos al área de Staging</h3>
+                        <p>Agregamos archivos mediante <b>git add</b>.</p>
+                        <div class="code">
+                            <p><span class="git">git</span> add &lt;nombre_archivo&gt; <span class="comentario">/* Para agregar un archivo en específico */</span></p>
+                            <p><span class="git">git</span> add . <span class="comentario">/* Para agregar todos los archivos */</span></p>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Comandos de estado</h3>
+                        <p>Para consultar el estado de nuestros archivos utilizamos <b>git status</b> o <b>git log --oneline</b>.</p>
+                        <div class="code">
+                            <p><span class="git">git</span> status <span class="comentario">/* Muestra una lista de archivos junto a su estado */</span></p>
+                            <p><span class="git">git</span> log --oneline <span class="comentario">/* Muestra un histórico de los commits resumido */</span></p>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Comandos de ayuda</h3>
+                        <p>En caso de necesitar ayuda sobre algún comando, podemos usar <b>git help</b> o <b>git --help</b>.</p>
+                        <div class="code">
+                            <p><span class="git">git</span> help &lt;comando&gt; <span class="comentario">/* Muestra la ayuda del comando indicado */</span></p>
+                            <p><span class="git">git</span> &lt;comando&gt; --help <span class="comentario">/* Alternativa al comando anterior */</span></p>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Primer Commit</h3>
+                        <p>Para guardar cambios realizados en la zona de Staging, utilizamos <b>git commit -m</b> seguido de un comentario.</p>
+                        <div class="code">
+                            <p><span class="git">git</span> commit -m "Primer Commit" <span class="comentario">/* Realiza el commit del archivo elegido */</span></p>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Subir repositorio local al repositorio remoto</h3>
+                        <p>Para subir los cambios al repositorio remoto, utilizamos <b>git push</b>.</p>
+                        <div class="code">
+                            <p><span class="git">git</span> push origin main<span class="comentario">/* Sube los cambios al repositorio remoto */</span></p>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Clonar un repositorio</h3>
+                        <p>Para copiar un repositorio remoto en local, utilizamos <b>git clone</b>.</p>
+                        <div class="code">
+                            <p><span class="git">git</span> clone &lt;repositorioRemoto&gt;&lt;directorioLocal&gt;<span class="comentario">/* Clona el repositorio remoto */</span></p>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Fusionar los cambios del repositorio remoto en el directorio local </h3>
+                        <p>Para descargar un repositorio remoto y fusionar los cambios en el directorio local, utilizamos <b>git pull</b>.</p>
+                        <div class="code">
+                            <p><span class="git">git</span> pull &lt;servidorRemoto&gt;<span class="comentario">/* Fusiona el repositorio remoto en el directorio de trabajo local */</span></p>
+                            <p><span class="git">git</span> pull &lt;servidorRemoto&gt;&lt;nombreRama&gt;<span class="comentario">/* Bajamos una rama específica del servidor remoto */</span></p>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Crear un repositorio remoto</h3>
+                        <p>Para crear un puntero al repositorio remoto utilizamos <b>git remote add</b>.</p>
+                        <div class="code">
+                            <p><span class="git">git</span> remote add &lt;nombreRepositorio&gt;&lt;URL&gt;<span class="comentario">/* Crea un repositorio remoto */</span></p>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Actualizar el repositorio local</h3>
+                        <p>Para actualizarlo con los cambios de un repositorio remoto sin fusionarlos en tu rama actual, utilizamos <b>git fetch</b>.</p>
+                        <div class="code">
+                            <p><span class="git">git</span> fetch &lt;servidorRemoto&gt;<span class="comentario">/* Recupera los datos del repositorio remoto que no estén en local */</span></p>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Untrackear los archivos seleccionados</h3>
+                        <p>Para devolver los archivos al estado de Untracked, utilizamos <b>git reset HEAD</b>.</p>
+                        <div class="code">
+                            <p><span class="git">git</span> reset HEAD &lt;nombreArchivo&gt;<span class="comentario">/* Devuelve los archivos al estado de Untracked */</span></p>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Eliminar los archivos seleccionados</h3>
+                        <p>Para eliminar los archivos seleccionados, utilizamos <b>git clean</b>.</p>
+                        <div class="code">
+                            <p><span class="git">git</span> reset clean -n<span class="comentario">/* Indica los ficheros a eliminar */</span></p>
+                            <p><span class="git">git</span> clean -f<span class="comentario">/* Elimina los ficheros */</span></p>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Volver a un commit en específico</h3>
+                        <p>En caso de querer volver al estado de un commit específico, utilizamos <b>git reset</b>.</p>
+                        <div class="code">
+                            <p><span class="git">git</span> reset --soft HEAD^<span class="comentario">/* Va al commit anterior borrando el actual y deja los archivos en added */</span></p>
+                            <p><span class="git">git</span> reset --mixed HEAD^<span class="comentario">/* Va al commit anterior borrando el actual y deja los archivos en untracked */</span></p>
+                            <p><span class="git">git</span> reset --hard HEAD^<span class="comentario">/* Va al commit anterior borrando el actual y elimina los archivos */</span></p>
+                            <p><span class="git">git</span> revert &lt;ID_commit&gt;<span class="comentario">/* Revierte un commit específico creando uno nuevo deshaciendo los cambios */</span></p>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Crear etiquetas</h3>
+                        <p>En caso de querer crear etiquetas que indiquen información útil <b>git tag</b>.</p>
+                        <div class="code">
+                            <p><span class="git">git</span> tag -a &lt;nombre&gt; -m "Comentario"<span class="comentario">/* Crea una etiqueta con nombre y mensaje descriptivo */</span></p>
+                            <p><span class="git">git</span> tag -a &lt;nombre&gt;&lt;ID_commit&gt; -m "Comentario"<span class="comentario">/* Crea una etiqueta anotada a un commit */</span></p>
+                            <p><span class="git">git</span> push origin &lt;nombreTag&gt;<span class="comentario">/* Sube una etiqueta específica al repositorio remoto */</span></p>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Corrección de errores</h3>
+                        <p>Para corregir distintos errores que puedan surgir a la hora hacer commit, empleamos <b>git --amend</b>.</p>
+                        <div class="code">
+                            <p><span class="git">git</span> commit --amend -m "Texto"<span class="comentario">/* Permite modificar el mensaje del último commit */</span></p>
+                            <p><span class="git">git</span> revert &lt;nombreRama&gt;~&lt;numeroCommit&gt;&lt;nombreRama&gt;~&lt;numeroCommit&gt;<span class="comentario">/* Revierte uno o más commits en una rama especificando la posición de los commits que quieres deshacer */</span></p>
+                        </div>
+                    </article>
+                </section>
+                <section>
+                    <h2 id="sexto">Trabajando con ramas</h2>
+                    <article>
+                        <h3>Bifurcaciones de nuevas versiones, con respecto a la rama máster</h3>
+                        <p>Para listar, crear o borrar ramas, usamos <b>git branch</b> o <b>git show</b>.</p>
+                        <div class="code">
+                            <p><span class="git">git</span> branch <span class="comentario">/* Lista las ramas existentes */</span></p>
+                            <p><span class="git">git</span> branch &lt;nombreRama&gt; <span class="comentario">/* Crea una nueva rama */</span></p>
+                            <p><span class="git">git</span> branch -d &lt;nombreRama&gt; <span class="comentario">/* Elimina una rama existente */</span></p>
+                            <p><span class="git">git</span> branch -m &lt;nombreAntiguo&gt;&lt;nombreNuevo&gt;<span class="comentario">/* Cambia el nombre de una rama */</span></p>
+                            <p><span class="git">git</span> show -m <span class="comentario">/* Permite ver los detalles del último commit y a qué ramas está asociado */</span></p>
+                        </div>
+                        <h3>Todos los commit se aplican sobre una rama</h3>
+                        <p>Para mostrar los ID's de los commits del repositorio local tenemos <b>git log</b>.</p>
+                        <div class="code">
+                            <p><span class="git">git</span> log -p <span class="comentario">/* Lista las ramas existentes */</span></p>
+                            <p><span class="git">git</span> log --oneline<span class="comentario">/* Muestra un historial commits en una sola línea por commit */</span></p>
+                            <p><span class="git">git</span> log --oneline --all <span class="comentario">/* Muestra un historial commits de todas las ramas */</span></p>
+                        </div>
+                        <h3>Por defecto trabajamos sobre la rama máster</h3>
+                        <p>Para moverte entre distintas ramas podemos usar <b>git checkout</b>.</p>
+                        <div class="code">
+                            <p><span class="git">git</span> checkout -b &lt;nombreRama&gt; <span class="comentario">/* Crea una nueva rama y se cambia a ella. */</span></p>
+                            <p><span class="git">git</span> checkout &lt;ID_commit&gt; <span class="comentario">/* Volvemos a cualquier versión en base al ID del commit */</span></p>
+                        </div>
+                        <h3>Duplicar una rama, aplicando cambios sin afectar el flujo de trabajo principal</h3>
+                        <p>Para ver una lista de los conflictos presentes usamos <b>git diff</b>.</p>
+                        <div class="code">
+                            <p><span class="git">git</span> diff &lt;ramaOrigen&gt;&lt;ramaDestino&gt;<span class="comentario">/* Ve conflictos entre ramas antes de fusionarlas */</span></p>
+                            <p><span class="git">git</span> merge &lt;nombreRama&gt;<span class="comentario">/* Fusiona una rama con otra activa */</span></p>
+                            <p><span class="git">git</span> merge --abort <span class="comentario">/* Descarta la fusión por conflictos en la misma */</span></p>
+                            <p><span class="git">git</span> log --merge <span class="comentario">/* Muestra información de los commits causantes del conflicto */</span></p>
+                        </div>
+                    </article>
+                </section>
             </main>
-            <footer>Hola esto es el footer</footer>
+            <footer>
+                <p>Alberto Sánchez Díaz</p>
+            </footer>
         </div>
+        <nav>
+            <div>
+                <a href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </a>
+                <a href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </nav>        
     </body>
 </html>
