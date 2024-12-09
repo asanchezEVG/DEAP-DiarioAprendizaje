@@ -175,6 +175,31 @@ p {
 #colores > li:nth-child(4) > b { color: #87CEEB; } /* Staged */
 #colores > li:nth-child(5) > b { color: #9370DB; } /* Commited */
 
+/* Colores de códigos */
+
+.codigos-aceptados {
+    color: #bffabf;
+    font-weight: bold;
+}
+
+/* Estilos para los códigos de redirección (300) */
+.codigos-redireccion {
+    color: #fff3b1;
+    font-weight: bold;
+}
+
+/* Estilos para los códigos de error del cliente (400) */
+.codigos-error-cliente {
+    color: #fccece;
+    font-weight: bold;
+}
+
+/* Estilos para los códigos de error del servidor (500) */
+.codigos-error-servidor {
+    color: #d3bffb; 
+    font-weight: bold;
+}
+
 section h3 {
     margin-left: 20px;
     margin-top: 10px;
