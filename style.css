@@ -169,11 +169,13 @@ p {
 
 /* Colores de estado */
 
-#colores > li:nth-child(1) > b { color: #FFCCCB; } /* Untracked */
+#colores > li:nth-child(1) > b { color: #ffdccb; } /* Untracked */
 #colores > li:nth-child(2) > b { color: #90EE90; } /* Unmodified */
 #colores > li:nth-child(3) > b { color: #FFD700; } /* Modified */
 #colores > li:nth-child(4) > b { color: #87CEEB; } /* Staged */
 #colores > li:nth-child(5) > b { color: #9370DB; } /* Commited */
+#colores > li:nth-child(6) > b { color: #db70c9; } /* Commited */
+#colores > li:nth-child(7) > b { color: #db7075; } /* Commited */
 
 /* Colores de códigos */
 
